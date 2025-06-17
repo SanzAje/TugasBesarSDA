@@ -2,6 +2,7 @@
 #include "operations.h"
 #include "history.h"
 #include "advanceOps.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -11,13 +12,30 @@ int main() {
     double a, b, hasil;
 
     do {
-        cout << "\n== Menu Kalkulator Ilmiah ==\n";
-        cout << "1. Tambah\n2. Kurang\n3. Kali\n4. Bagi\n";
-        cout << "5. Sin\n6. Cos\n7. Tan\n8. Log\n9. Akar\n10. Pangkat\n";
-        cout << "11. Faktorial\n12. Lihat Riwayat\n";
-        cout << "13. FPB\n14. KPK\n15. Permutasi (nPr)\n16. Kombinasi (nCr)\n";
-        cout << "0. Keluar\nPilih: ";
-        cin >> pilihan;
+    cout << "\n== Menu Kalkulator Ilmiah ==\n";
+    string kiri[] = {
+        "1. Tambah", "2. Kurang", "3. Kali", "4. Bagi",
+        "5. Sin", "6. Cos", "7. Tan", "8. Log"
+    };
+    string kanan[] = {
+        "9. Akar", "10. Pangkat", "11. Faktorial", "12. Lihat Riwayat",
+        "13. FPB", "14. KPK", "15. Permutasi (nPr)", "16. Kombinasi (nCr)"
+    };
+
+    for (int i = 0; i < 8; ++i) {
+        cout << std::left << std::setw(25) << kiri[i] << kanan[i] << '\n';
+    }
+
+    cout << "\n0. Keluar\nPilih: ";
+    cin >> pilihan;
+
+    // Cek validitas input
+    if (cin.fail()) {
+        cin.clear(); // Reset error flag
+        cin.ignore(1000, '\n'); // Buang sisa input
+        cout << "Input tidak valid! Masukkan angka.\n";
+        continue; // ulangi menu
+    }
 
         switch (pilihan) {
             case 1:
