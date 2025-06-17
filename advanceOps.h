@@ -1,5 +1,5 @@
-#ifndef ADVANCE_OPS_H
-#define ADVANCE_OPS_H
+#ifndef ADVANCEOPS_H
+#define ADVANCEOPS_H
 
 long long faktorial(int n);
 int fpb(int a, int b);

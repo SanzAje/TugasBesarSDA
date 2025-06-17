@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "advanceOps.h"
 
 long long faktorial(int n) {
@@ -22,11 +23,17 @@ int kpk(int a, int b) {
 }
 
 long long permutasi(int n, int r) {
-    if (r > n || n < 0 || r < 0) return 0;
+    if (r > n || n < 0 || r < 0) {
+        printf("Error: Nilai tidak valid untuk permutasi\n");
+        return -1;
+    }
     return faktorial(n) / faktorial(n - r);
 }
 
 long long kombinasi(int n, int r) {
-    if (r > n || n < 0 || r < 0) return 0;
+    if (r > n || n < 0 || r < 0) {
+        printf("Error: Nilai tidak valid untuk kombinasi\n");
+        return -1;
+    }
     return faktorial(n) / (faktorial(r) * faktorial(n - r));
 }
