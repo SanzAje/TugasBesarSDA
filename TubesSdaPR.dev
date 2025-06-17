@@ -1,6 +1,6 @@
 [Project]
-filename=TubesSdaPR.dev
-name=TubesSdaPR
+filename=TubesSDAPraktek.dev
+name=TubesSDAPraktek
 Type=1
 Ver=2
 ObjFiles=
@@ -12,7 +12,7 @@ MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
-IsCpp=1
+IsCpp=0
 Icon=
 ExeOutput=
 ObjectOutput=
