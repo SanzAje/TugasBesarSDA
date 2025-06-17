@@ -18,8 +18,8 @@ int main() {
             "5. Sin", "6. Cos", "7. Tan", "8. Log"
         };
         const char* kanan[] = {
-            "9. Akar", "10. Pangkat", "11. Faktorial", "12. Lihat Riwayat",
-            "13. FPB", "14. KPK", "15. Permutasi (nPr)", "16. Kombinasi (nCr)"
+            "9. Akar", "10. Pangkat", "11. Faktorial", "12. Kombinasi (nCr)",
+            "13. Permutasi (nPr)", "14. KPK", "15. FPB", "16. Tampilkan Riwayat"
         };
 
         printf("\n== Menu Kalkulator Ilmiah ==\n");
@@ -46,11 +46,11 @@ int main() {
             case 9: scanf("%lf", &a); hasil = akar(a); tambahRiwayat(&riwayat, "Akar", hasil); break;
             case 10: scanf("%lf %lf", &a, &b); hasil = pangkat(a, b); tambahRiwayat(&riwayat, "Pangkat", hasil); break;
             case 11: scanf("%lf", &a); hasil = faktorial((int)a); tambahRiwayat(&riwayat, "Faktorial", hasil); break;
-            case 12: tampilkanRiwayat(&riwayat); break;
-            case 13: scanf("%lf %lf", &a, &b); hasil = fpb((int)a, (int)b); tambahRiwayat(&riwayat, "FPB", hasil); break;
+            case 12: scanf("%lf %lf", &a, &b); hasil = kombinasi((int)a, (int)b); tambahRiwayat(&riwayat, "Kombinasi", hasil); break;
+            case 13: scanf("%lf %lf", &a, &b); hasil = permutasi((int)a, (int)b); tambahRiwayat(&riwayat, "Permutasi", hasil); break;
             case 14: scanf("%lf %lf", &a, &b); hasil = kpk((int)a, (int)b); tambahRiwayat(&riwayat, "KPK", hasil); break;
-            case 15: scanf("%lf %lf", &a, &b); hasil = permutasi((int)a, (int)b); tambahRiwayat(&riwayat, "Permutasi", hasil); break;
-            case 16: scanf("%lf %lf", &a, &b); hasil = kombinasi((int)a, (int)b); tambahRiwayat(&riwayat, "Kombinasi", hasil); break;
+            case 15: scanf("%lf %lf", &a, &b); hasil = fpb((int)a, (int)b); tambahRiwayat(&riwayat, "FPB", hasil); break;
+            case 16: tampilkanRiwayat(&riwayat); break;
             case 0: printf("Keluar dari program...\n"); break;
             default: printf("Pilihan tidak valid!\n"); break;
         }
