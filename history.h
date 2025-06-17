@@ -1,22 +1,20 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 
-#include <string>
-using namespace std;
+#define MAX_LEN 100
 
-struct Node {
-    string operasi;
+typedef struct Node {
+    char operasi[MAX_LEN];
     double hasil;
-    Node* next;
-};
+    struct Node* next;
+} Node;
 
-class HistoryList {
-private:
+typedef struct {
     Node* head;
-public:
-    HistoryList();
-    void tambah(string operasi, double hasil);
-    void tampilkan();
-};
+} HistoryList;
+
+void initRiwayat(HistoryList* list);
+void tambahRiwayat(HistoryList* list, const char* operasi, double hasil);
+void tampilkanRiwayat(const HistoryList* list);
 
 #endif
